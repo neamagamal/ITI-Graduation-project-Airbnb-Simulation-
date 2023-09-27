@@ -1,0 +1,41 @@
+﻿@model AirBnB.Models.Amenity
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="edit">
+    <form asp-action="Create" enctype="multipart/form-data">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*================================================================*@
+        <label class="lblName" for="Name">Add The Amenity Name</label>
+        <br>
+        <input asp-for="AmenityName" type="text" id="Name">
+        <span asp-validation-for="AmenityName" class="text-danger"></span>
+        @*================================================================*@
+        <label class="lblName" for="Name">Add The Amenity Type</label>
+        <br>
+        <input asp-for="AmenityType" type="text" id="Name">
+        <span asp-validation-for="AmenityType" class="text-danger"></span>
+        @*================================================================*@
+        <div class="upload-img">
+            <label class="lblImg">Add The Amenity Image</label>
+            <br>
+            <input type="file" id="file-1" accept="image/*" name="imgFile">
+
+            <label for="file-1" id="file-1-preview">
+                <img src="https://bit.ly/3ubuq5o" alt="Amenity Image">
+                <span>+</span>
+            </label>
+        </div>
+        @*================================================================*@
+        <input type="submit" value="Add">
+        @*================================================================*@
+        <a class="backLink" asp-action="Index">Back</a>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

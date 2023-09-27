@@ -1,0 +1,46 @@
+﻿@model AirBnB.Models.Amenity
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="edit">
+    <form asp-action="Edit" enctype="multipart/form-data">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="AmenityId" />
+        @*================================================================*@
+        <label class="lblName" for="Name">Update The Amenity Name</label>
+        <br>
+        <input asp-for="AmenityName" type="text" id="Name">
+        <span asp-validation-for="AmenityName" class="text-danger"></span>
+        @*================================================================*@
+        <label class="lblName" for="Name">Update The Amenity Type</label>
+        <br>
+        <input asp-for="AmenityType" type="text" id="Name">
+        <span asp-validation-for="AmenityType" class="text-danger"></span>
+        @*================================================================*@
+        <div class="upload-img">
+            <label class="lblImg">Update The Amenity Image</label>
+            <br>
+            <input type="file" id="file-1" accept="image/*" name="imgFile">
+
+            <label for="file-1" id="file-1-preview" class="AmenityImg">
+                <img src="/AmenityImg/@Model.AmenityImgSrc" alt="City Image">
+                <span>+</span>
+            </label>
+        </div>
+        @*================================================================*@
+        <input type="submit" value="Update">
+        @*================================================================*@
+        <a class="backLink" asp-action="Index">Back</a>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

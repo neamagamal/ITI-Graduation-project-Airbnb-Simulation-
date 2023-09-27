@@ -1,0 +1,84 @@
+﻿@model AirBnB.Models.Booking
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="bodyofbooking row">
+    @* <div class="col-md-7">
+    </div>*@
+    <!-- Reservationform -->
+    <div class="col-8" >
+        @if (ViewBag.flag == false)
+        {
+            <div class="alert alert-dark" style="width:60%;text-align:center;margin-left:2px" role="alert">
+                <h3>This date is already reserved</h3>
+            </div>
+        }
+        else if (ViewBag.flag == true)
+        {
+            <div class="alert alert-dark" style="width:60%;text-align:center;margin-left:2px" role="alert">
+                <h3>You Booked a Property</h3>
+            </div>
+        }
+        @*    else if(ViewBag.flag1==false){
+            <div class="alert alert-dark" style="width:60%;text-align:center;margin-left:2px" role="alert">
+                <h3>You Have Booked This apartmenet</h3>
+            </div>
+            
+        }*@
+        <form asp-action="Create">
+            <div class="container stylefont">
+                <div class="col-md-5 border shadow-lg p-3 mb-5 mt-4 row">
+
+                    <div class="col-md-6">
+                        <h4>Reservation Form</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <i class="fa-solid fa-pencil"></i>
+                    </div>
+                    <br><br>
+                    <hr style="width:90%;text-align:center;margin-left:0;height:2px">
+                    <div class="form-group">
+
+                        <input asp-for="AppUserId" class="form-control" value='@ViewData["userid"]' type="hidden" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="PropertyId" class="form-control" value='@ViewData["SelectedPropertyId"]' type="hidden" />
+                    </div>
+                    <div class="input-group-prepend" style=" font-size: small;">
+                        <label class="ms-1">CHECK IN</label>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+                        <label class="ms-4">CHECK OUT</label><br>
+                    </div>
+                    <div class="input-group">
+                        <input class="form-control" asp-for="CheckInDate" type="date" placeholder="dd-mm-yyyy"  />
+                        <input class="form-control" asp-for="CheckOutDate" type="date" placeholder="dd-mm-yyyy" />
+                    </div>
+                    <br>
+                    <div class="form-group" style="font-size:small;">
+                        <label class ="ms-1 mb-1">GUESTS</label><br>
+                        <select class="custom-select w-100 rounded-3" asp-for="BookingCapacity">
+                            @for (int i = 1; i <= (int)ViewData["PropertyCapacity"]; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select><br>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger btn-lg mt-3 w-100">Book</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+       
+    </div>
+    </div>
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

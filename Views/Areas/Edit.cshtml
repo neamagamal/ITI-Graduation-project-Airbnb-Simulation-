@@ -1,0 +1,83 @@
+﻿@model AirBnB.Models.Area
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="edit">
+<form asp-action="Edit" enctype="multipart/form-data">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="AreaId" />
+    @*================================================================*@
+    <label class="lblNameArea" for="Name">Update The Area Name</label>
+    <br>
+    <input asp-for="AreaName" type="text" id="Name">
+    <span asp-validation-for="AreaName" class="text-danger"></span>
+    @*================================================================*@
+    <div class="upload-img">
+        <label class="lblImgArea">Update The Area Image</label>
+        <br>
+        <input type="file" name="imgFile" id="file-1" accept="image/*">
+
+        <label for="file-1" id="file-1-preview">
+                <img src="/AreaImgs/@Model.AreaImg" alt="Area Image">
+            <span>+</span>
+        </label>
+    </div>
+    @*================================================================*@
+    <label class="lblNameCityArea" for="Name">Update The City Name</label>
+    <br>
+    <select asp-for="CityId" class="selectCity" id="Name" asp-items="ViewBag.CityId"></select>
+    <span asp-validation-for="CityId" class="text-danger"></span>
+    <br>
+    @*================================================================*@
+    <input type="submit" class="submitArea" value="Update">
+    @*================================================================*@
+    <a class="backLinkArea" asp-action="Index">Back</a>
+</form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+@*<h1>Edit</h1>
+
+<h4>Area</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AreaId" />
+            <div class="form-group">
+                <label class="control-label">Area Name</label>
+                <input asp-for="AreaName" class="form-control" />
+                <span asp-validation-for="AreaName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <img src="/AreaImgs/@Model.AreaImg" width="100px" />
+            </div>
+            <div class="form-group">
+                <label>Update your image</label>
+                <input name="imgFile" type="file" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">City Name</label>
+                <select asp-for="CityId" class="form-control" asp-items="ViewBag.CityId"></select>
+                <span asp-validation-for="CityId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AirBnB.Models.Amenity>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container" style="text-align:center">
+
+    <h1>Amenities</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table  table-dark table-hover ">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AmenityName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AmenityType)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmenityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmenityType)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AmenityId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AmenityId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AmenityId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

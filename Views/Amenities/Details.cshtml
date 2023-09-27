@@ -1,0 +1,22 @@
+﻿@model AirBnB.Models.Amenity
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="info">
+    <div class="container">
+        <div class="row details">
+            <div class="col-6 image">
+                <img src="/AmenityImg/@Model.AmenityImgSrc" alt="" class="AmenityImg">
+            </div>
+            <div class="col-4 text align-self-center">
+                <h1>@Model.AmenityName</h1>
+                <h1>@Model.AmenityType</h1>
+                <a asp-action="Index">Back To List</a>
+                <a asp-action="Edit" asp-route-id="@Model.AmenityId">Edit</a>
+            </div>
+        </div>
+    </div>
+</div>

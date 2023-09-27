@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AirBnB.Models.Area>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container" style="text-align:center">
+    <h1>Areas</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AreaName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AreaName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City.CityName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.AreaId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.AreaId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.AreaId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,21 @@
+﻿@model AirBnB.Models.Area
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="info">
+    <div class="container">
+        <div class="row details">
+            <div class="col-8 image">
+                <img src="/AreaImgs/@Model.AreaImg" alt="@Model.AreaName">
+            </div>
+            <div class="col-4 text align-self-center">
+                <h1>@Model.AreaName , @Model.City.CityName</h1>
+                <a asp-action="Index">Back To List</a>
+                <a asp-action="Edit" asp-route-id="@Model.AreaId">Edit</a>
+            </div>
+        </div>
+    </div>
+</div>
+
