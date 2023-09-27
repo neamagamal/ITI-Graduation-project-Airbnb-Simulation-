@@ -1,0 +1,786 @@
+﻿/* Start Global Rules */
+:root {
+    --main-color: #2196F3;
+    --main-color-alt: #1787E0;
+    --main-transition: 0.3s;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* End Global Rules */
+
+/* Start Components */
+.main-heading {
+    text-align: center;
+}
+
+    .main-heading h2 {
+        position: relative;
+        font-weight: normal;
+        font-size: 40px;
+        margin-bottom: 70px;
+        text-transform: uppercase;
+        margin-top: 30px;
+        color: var(--main-color);
+    }
+
+        .main-heading h2::before {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            width: 120px;
+            height: 2px;
+            background: var(--main-color);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .main-heading h2::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50px;
+            border: 2px solid var(--main-color);
+            bottom: -36px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+        }
+
+    .main-heading p {
+        max-width: 550px;
+        margin: 0px auto 100px;
+        line-height: 2;
+        color: #777;
+    }
+/* End Components */
+
+/* Start Header */
+.header {
+    background-color: white;
+    box-shadow: 0 0 10px #ddd;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+}
+
+    .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .header #logo {
+        color: var(--main-color);
+        font-size: 60px;
+        font-weight: bold;
+        padding-top: 7px;
+    }
+
+@media(max-width:767px) {
+    .header .logo {
+        width: 100%;
+        height: 50px;
+    }
+}
+
+.header .main-nav {
+    display: flex;
+}
+
+    .header .main-nav > li > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 72px;
+        position: relative;
+        color: black;
+        padding: 0 30px;
+        transition: var(--main-transition);
+        overflow: hidden;
+    }
+
+@media(max-width:767px) {
+    .header .main-nav {
+        margin: auto;
+    }
+
+        .header .main-nav > li > a {
+            font-size: 14px;
+            padding: 10px;
+            height: 40px;
+        }
+}
+
+.header .main-nav > li > a::before {
+    content: '';
+    position: absolute;
+    background-color: var(--main-color);
+    width: 100%;
+    height: 4px;
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+
+.header .main-nav > li > a:hover {
+    background-color: #fafafa;
+    color: var(--main-color);
+}
+
+    .header .main-nav > li > a:hover::before {
+        left: 0;
+    }
+
+.header .main-nav > li:hover .mega-menu {
+    z-index: 100;
+    opacity: 1;
+    top: calc(100% + 1px);
+}
+
+.header .mega-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 30px;
+    background-color: white;
+    border-bottom: solid 3px var(--main-color);
+    z-index: 100;
+    display: flex;
+    gap: 40px;
+    top: calc(100% + 50px);
+    transition: top var(--main-transition), opacity var(--main-transition);
+    z-index: -1;
+    opacity: 0;
+}
+
+@media(max-width:767px) {
+    .header .mega-menu {
+        flex-direction: column;
+        gap: 0;
+        padding-left: 5px;
+    }
+}
+
+.header .mega-menu .image img {
+    width: 70%;
+    padding-left:76px;
+}
+
+@media(max-width:991px) {
+    .header .mega-menu .image img {
+        display: none;
+    }
+}
+
+.header .mega-menu .links {
+    min-width: 250px;
+    flex: 1;
+}
+
+    .header .mega-menu .links li {
+        position: relative;
+    }
+
+        .header .mega-menu .links li:not(:last-child) {
+            border-bottom: 1px solid #e9e6e6;
+        }
+
+@media(max-width:767px) {
+    .header .mega-menu .links:first-of-type li:last-child {
+        border-bottom: 1px solid #e9e6e6;
+    }
+}
+
+.header .mega-menu .links li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    transition: var(--main-transition);
+    background-color: rgb(242, 233, 233);
+    z-index: -10;
+}
+
+.header .mega-menu .links li:hover::before {
+    width: 100%;
+}
+
+.header .mega-menu .links li a {
+    color: var(--main-color);
+    display: block;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+    .header .mega-menu .links li a i {
+        margin-right: 10px;
+    }
+/* End Header */
+
+/* Start Landing */
+.landing {
+    position: relative;
+    height: 90vh;
+    background-image: url("../LayoutImgs/landing.jpg");
+}
+
+    .landing::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .landing .container {
+        min-height: calc(100vh - 72px);
+        display: flex;
+        align-items: center;
+        padding-bottom: 120px;
+        position: relative;
+    }
+
+    .landing .image {
+        position: relative;
+        width: 600px;
+        /* animation: up-and-down 5s linear infinite; */
+        /* animation-name: up-and-down;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; */
+    }
+
+@media(max-width:991px) {
+    .landing .image {
+        display: none;
+    }
+}
+
+.landing .go-down {
+    color: var(--main-color);
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+    .landing .go-down:hover {
+        color: aquamarine;
+    }
+
+    .landing .go-down i {
+        animation: bouncing 1.5s infinite;
+    }
+
+.landing .selection {
+    flex: 1;
+    background-color: white;
+    width: 50px;
+    height: 250px;
+    border-radius: 15px;
+    outline: solid 5px var(--main-color);
+    margin-top: 90px;
+}
+
+@media(max-width:991px) {
+    .landing .selection {
+        text-align: center;
+    }
+}
+
+.landing .selection h3 {
+    letter-spacing: -1px;
+    margin: 35px 20% 0px;
+    font-size: 25px;
+    color: var(--main-color);
+}
+
+@media(max-width:767px) {
+    .landing .selection h3 {
+        font-size: 24px;
+    }
+}
+
+.landing .selection form {
+    display: flex;
+    flex-direction: column;
+}
+
+    .landing .selection form select {
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 8%;
+        border-radius: 15px;
+        padding: 3px 10px;
+        border: 3px solid var(--main-color);
+    }
+
+        .landing .selection form select:hover {
+            background-color: #1786e086;
+            color: white;
+        }
+
+    .landing .selection form input {
+        width: 30%;
+        margin-left: 35%;
+        margin-top: 25px;
+        border-radius: 15px;
+        padding: 7px 10px;
+        background-color: var(--main-color);
+        color: white;
+        border: white solid 1px;
+    }
+
+        .landing .selection form input:hover {
+            border: 2px solid black;
+        }
+
+@media(max-width:767px) {
+    .landing .selection p {
+        font-size: 18px;
+    }
+}
+
+@media(max-width:991px) {
+    .landing .selection p {
+        margin: 10px auto;
+    }
+}
+/* End Landing */
+
+/* Start Animation */
+@keyframes up-and-down {
+    0%,100% {
+        top: 0;
+    }
+
+    50% {
+        top: -50px
+    }
+}
+
+@keyframes bouncing {
+    0%,10%,20%,50%,80%,100% {
+        transform: translateY(0px);
+    }
+
+    40%,60% {
+        transform: translateY(-15px);
+    }
+}
+/* End Animation */
+
+/* Start Details */
+.Details {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+    .Details .imgs-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    }
+
+        .Details .imgs-container .box {
+            position: relative;
+            overflow: hidden;
+            margin: 5px;
+        }
+
+            .Details .imgs-container .box:hover .caption {
+                bottom: 0px;
+            }
+
+            .Details .imgs-container .box img {
+                max-width: 100%;
+                transition: 0.3s;
+                border-radius: 15px;
+            }
+
+            .Details .imgs-container .box:hover img {
+                transform: rotate(3deg) scale(1.1);
+            }
+
+            .Details .imgs-container .box .caption {
+                position: absolute;
+                left: 0px;
+                bottom: -100Px;
+                padding: 20px;
+                background-color: white;
+                width: 100%;
+                transition: 0.3s;
+            }
+
+                .Details .imgs-container .box .caption h4 {
+                    font-weight: normal;
+                    margin-bottom: 10px;
+                }
+
+                .Details .imgs-container .box .caption p {
+                    color: var(--main-color-alt);
+                }
+/* End Details */
+
+
+/* Start Footer */
+.footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-image: url(../LayoutImgs/Footer5.jpg);
+    background-size: cover;
+    position: relative;
+    margin-top: 70px;
+    color: white !important;
+}
+
+    .footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .footer a, .footer h6, .footer span {
+        color: white !important;
+        position: relative;
+    }
+
+    .footer i {
+        color: white;
+        font-size: 20px;
+        padding: 3px;
+    }
+
+/* End Footer */
+
+/*Details view(Area-City)*/
+.info {
+    height: 90vh;
+    background-image: url("../LayoutImgs/landing.jpg");
+    position: relative;
+}
+
+    .info::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.505);
+    }
+
+    .info .container .details {
+        position: relative;
+        padding-top: 40px;
+    }
+
+.container .details .image img {
+    width: 90%;
+    border-radius: 25px;
+    box-shadow: 0px 5px 14px 4px;
+}
+
+.container .details .text {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+    .container .details .text h1 {
+        font-family: 'Cinzel', serif;
+        margin-bottom: 60px;
+        text-shadow: 0px 3px 7px;
+        font-weight: 700;
+        color: white;
+    }
+
+    .container .details .text a {
+        display: block;
+        font-family: 'Cinzel', serif;
+        text-decoration: none;
+        font-size: large;
+        font-weight: 700;
+        background-color: #2196F3;
+        color: white;
+        border-radius: 12px;
+        width: 50%;
+        padding: 6px 0px;
+        margin: 9px auto;
+    }
+
+@media (max-width: 776px) {
+    .info .container .details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .details img {
+        margin: 0px 35%;
+    }
+
+    .container .details .text h1 {
+        margin: 40px -11%;
+    }
+
+    .container .details .text a {
+        width: 100%;
+    }
+}
+
+
+/*(Edit-Create) View(City-Area)*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway",sans-serif;
+    background: #f8f8f8;
+}
+
+.edit {
+    position: relative;
+    height: 90vh;
+    background-image: url("../LayoutImgs/landing.jpg");
+    text-align: center;
+}
+
+    .edit::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .edit form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: rgba(0, 0, 0, 0.601);
+        padding: 2%;
+        border-radius: 25px;
+        font-family: 'Cinzel', serif;
+        width: 40%;
+    }
+
+        .edit form .upload-img #file-1 {
+            visibility: hidden;
+            display: none;
+        }
+
+        .edit form .upload-img #file-1-preview img {
+            width: 95%;
+            height: 200px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .edit form .upload-img #file-1-preview {
+            position: relative;
+        }
+
+            .edit form .upload-img #file-1-preview span {
+                position: absolute;
+                top: 80%;
+                left: 2.2%;
+                background-color: #2196F3;
+                padding: 8px 46.3%;
+            }
+
+                .edit form .upload-img #file-1-preview span:hover {
+                    color: white;
+                }
+
+        .edit form input[type="text"] {
+            border: none;
+            outline: none;
+            padding: 0px 10px;
+            border-radius: 15px;
+            width: 60%;
+        }
+
+        .edit form input[type="submit"] {
+            margin-top: 5%;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            padding: 5px 22px;
+        }
+
+            .edit form input[type="submit"]:hover {
+                background-color: #2196F3;
+                color: white;
+            }
+
+        .edit form input[type="text"]:hover {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .edit form .lblName {
+            font-size: 140%;
+            font-weight: 700px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1%;
+        }
+
+        .edit form .upload-img .lblImg {
+            font-size: 140%;
+            font-weight: bold;
+            margin-top: 8%;
+            color: white;
+            margin-bottom: 1%;
+        }
+
+form .backLink {
+    display: block;
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+    font-size: large;
+    font-weight: 700;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 12px;
+    width: 30%;
+    padding: 1px 0px;
+    margin: 9px auto;
+}
+
+
+/*(Edit-Create) View (rest of Area Design)*/
+
+form .selectCity {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 2px 14px
+}
+
+.edit form .lblNameArea {
+    font-size: 120%;
+    font-weight: 700px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: -1%;
+}
+
+.edit form .upload-img .lblImgArea {
+    font-size: 120%;
+    font-weight: bold;
+    margin-top: 3%;
+    color: white;
+    margin-bottom: -1%;
+}
+
+form .backLinkArea {
+    display: block;
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+    font-size: large;
+    font-weight: 700;
+    background-color: #2196F3;
+    color: white;
+    border-radius: 12px;
+    width: 30%;
+    padding: 1px 0px;
+    margin: 9px auto;
+}
+
+.edit form .submitArea {
+    margin-top: 5%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 5px 22px;
+}
+
+.edit form .lblNameCityArea {
+    font-size: 120%;
+    font-weight: 700px;
+    font-weight: bold;
+    color: white;
+    margin-top: 4%;
+}
+
+@media (max-width: 720px) {
+    .edit form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    .edit form .lblNameCityArea,
+    .edit form .upload-img .lblImgArea,
+    .edit form .upload-img .lblImg,
+    .edit form .lblName {
+        font-size: 100%;
+    }
+}

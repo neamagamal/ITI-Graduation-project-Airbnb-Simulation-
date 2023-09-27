@@ -1,0 +1,344 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+.big {
+    padding: 20px 50px;
+}
+
+.centercategories {
+    display: flex;
+    justify-content: space-around;
+}
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.carousel {
+    margin: 5px ;
+}
+
+.we {
+    margin: 10px 10px;
+}
+
+.propertyinfo {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.properties-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.words {
+    color: white !important;
+}
+
+.icons {
+    width: 50px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    align-content: center;
+}
+
+.bluewords {
+    color: blue;
+}
+/*Views*/
+
+/*Amiraaaaaaaaaaaaa*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #DE3151;
+    --main-color-alt: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* .container {
+  width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+} */
+
+/* a{
+   text-decoration: none;
+} */
+
+.head {
+    height: 15vh;
+}
+
+.heading {
+    font-size: 30px;
+    color: var(--main-color-alt);
+}
+
+
+
+.x {
+    margin: 0 -15px !important;
+}
+
+.y {
+    margin-left: -30px !important;
+}
+
+.custom-select {
+    height: 40px !important;
+}
+
+/*Amiraaaaaaaaaaaaaaaaaaa*/
+
+/*karimmmmmmmmmmmmmmm*/
+.AmenityImg{
+   background-color:white;
+}
+
+.backgroundimg {
+    background-image: url("/backgroundimg/14.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 200px
+}
+
+.formbackground {
+    background-color: rgb(238, 236, 236, 0.5);
+}
+
+imagedetails {
+    margin-bottom: 8px;
+    cursor: pointer;
+    padding-left: 15px;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* .container {
+  width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+} */
+
+/* a{
+   text-decoration: none;
+} */
+
+.head {
+    height: 15vh;
+}
+
+.heading {
+    font-size: 30px;
+    color: var(--main-color-alt);
+}
+
+
+
+.x {
+    margin: 0 -15px !important;
+}
+
+.y {
+    margin-left: -30px !important;
+}
+
+.custom-select {
+    height: 40px !important;
+}
+
+/*karimmmmmmmmmmmmmmmmmmmm*/
+
+
+/*dohaaaaaaaaaaaaaaaaaaaaaa*/
+.icons-image{
+    margin-bottom: 8px;
+    width: 50px;
+    cursor: pointer;
+    padding-left: 15px;
+}
+
+.properties-headers{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.img {
+    width: 30px;
+    float: right;
+    margin-top: 20px;
+}
+.btns:hover {
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.btns {
+    border: 1px solid black;
+}
+
+.textarea {
+    border: 1px solid black;
+}
+
+.highlightimg {
+    width: 25px;
+}
+.pictures {
+    height: 350px;
+    border: 1px dashed grey;
+    position: relative;
+}
+
+.imgbtn {
+    position: absolute;
+    top: 30px;
+}
+
+.photo {
+    margin-bottom: 8px;
+    width: 65px;
+}
+
+.photostexts {
+    margin-top: 15%;
+}
+
+.select-loc {
+    height: 50px;
+    border: 1px solid black;
+    font-size: large;
+}
+
+.inputs {
+    border: 1px solid black;
+}
+
+.texts {
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 7px;
+    margin-top: 10px;
+}
+
+.submitbtn {
+    border: 2px solid;
+    width:25%;
+}
+
+.sel-label {
+    border: 2px solid black;
+    background-color: rgb(238, 236, 236);
+}
+
+.login-background {
+    background-image: url("/Images/maldives-3220702.jpg");
+    width: 70%;
+    height: 100%;
+    margin-left:2.5%;
+    margin-top:2.5%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.register-background {
+    background-image: url("/Images/manor-house-2359884.jpg");
+    width: 83%;
+    height: 100%;
+    margin-top: 1.5%;
+    margin-left: 1%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.begin {
+    text-shadow: 1px 2px 1px white,0 0 2em white,0 0 0.2em white;
+}
+.shadow {
+    box-shadow: #DE3151 20px 20px inset;
+}
+/*dohhaaaaaaaaaaaaaaaaaaaaaaa*/
+/*Neamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+.start {
+    margin-top: 170px;
+    margin-bottom: 30px;
+    left: auto;
+}
+.start h1 {
+    font-size: 60px;
+    font-weight:500 ;
+    color: #222;
+}
+.steps p {
+    font-size:20px;
+}
+
+.steps {
+    margin-top: 90px;
+    margin-bottom: 20px;
+}
+
+.steps h1 {
+   font-size: 45px;
+   /*text-transform: uppercase;*/
+   font-weight: 600;
+   color: #222;
+}
+
+/*Neamaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+
+
+/*index*/
+/*.card{
+    height:400px; 
+    margin-bottom:20px;
+}*/
